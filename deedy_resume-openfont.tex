@@ -1,0 +1,298 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.2 (16/9/2014)
+%
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[]{deedy-resume-openfont}
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+ 
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lastupdated
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{Zohair}{ul Hasan}{
+(215)-316-4989\\
+\href{https://github.com/Zohair-coder/}{github.com/Zohair-coder} | \href{mailto:zohair.ul.hasan@gmail.com}{zohair.ul.hasan@gmail.com} |
+\href{https://www.linkedin.com/in/zohair-ul-981939198/}{linkedin.com/in/zohair-ul-981939198}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.33\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Education} 
+%       Drexel University
+\subsection{Drexel University}
+\descript{BS in Computer Science}
+\location{Expected Graduation 2024 | Philadelphia, PA}
+Current year: Sophomore \\
+\textbf{GPA: 4.0} \\
+Honors: Drexel AJ Merit Scholarship, Dean's List in Fall, Winter, and Spring 2019 - 2020 \\
+Relevant Courses: \\
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Advanced Programming I \& II (A+, A+)
+\item Advanced Programming Tools \& Techniques
+\item Computing \& Informatics Design
+\end{tightemize}
+\sectionsep
+
+%       CS 50 Harvard Online Course
+\runsubsection{CS 50 Harvard Online Course}
+\descript{ | \href{https://certificates.cs50.io/801bb5e8-6b16-4993-94ac-85911ba54d47.pdf?size=letter}{Certificate}}
+\location{June 2020 |  Philadelphia, PA}
+Learned complex Computer Science topics including: \\
+% \vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Algorithms and Data Structures (in C programming language)
+\item Pointers
+\item Memory management
+\item Databases
+\item HTML \& CSS
+\item Python
+\item Flask
+\end{tightemize}
+\sectionsep
+
+%       Roots School System
+\subsection{Roots School System}
+\descript{Highschool}
+\location{Graduated August 2019 |  Islamabad, Pakistan}
+GPA: 3.95
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Skills}
+%       Technical Skills
+\subsection{Technical Skills}
+\location{General:}
+Python3 \textbullet{}   C \textbullet{} HTML \& CSS \textbullet{} JavaScript \\
+SQLite \textbullet{} Git \textbullet{} Bash \textbullet{} Linux \\
+Raspberry Pi \textbullet{} Awk \textbullet{} VB.NET \textbullet{} Microsoft Office Suite \textbullet{} LaTeX \textbullet{} Markdown \\
+
+\location{Libraries \& Frameworks:}
+Flask \textbullet{} Numpy \textbullet{} Matplotlib \textbullet{} Requests \\ BeautifulSoup4 \textbullet{} Bootstrap 4 \\
+\sectionsep
+
+%       Soft Skills
+\subsection{Soft Skills}
+Communication (English \& Urdu/Hindi) \\ Leadership \textbullet{} Adaptability \\ Work Ethic \textbullet{} Teamwork \textbullet{} Time Management\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.66\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Experience}
+
+%       Drexel Vertically Integrated Projects
+\subsection{Drexel Vertically Integrated Projects}
+\descript{Software Engineer}
+\location{Jan 2020 - March 2020 | Philadelphia, PA}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Led a team of 2 to program a Raspberry Pi in Bash using FFMPEG to record video, compress it, and upload directly to live stream to YouTube in real time
+\item Learned Bash Scripting and FFMPEG (a command line tool used to process video and audio) in 1 week to complete the task
+\item Reduced latency by 40\% by optimizing key factors such as frames per second and video resolution 
+\item Evaluated multiple options to complete the task and gave a presentation to \textbf{\href{https://drexel.edu/engineering/about/faculty-staff/C/cairncross-richard/}{Professor Cairncross}}
+\end{tightemize}
+\sectionsep
+
+%       Drexel University
+\subsection{Drexel University}
+\descript{Intramural Sports Official}
+\location{Jan 2020 - Present | Philadelphia, PA}
+% \vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Officiated 30+ basketball \& soccer games
+\item Communicated with heated players to ensure safety for everyone
+\end{tightemize}
+\sectionsep
+
+
+%       Roots School System
+% \subsection{Roots School System}
+% \descript{Head of IT}
+% \location{Sep 2017 – Dec 2018 | Islamabad, Pakistan}
+% \vspace{\topsep} % Hacky fix for awkward extra vertical space
+% \begin{tightemize}
+% \item Managed 5 person team to design, print and distribute ID cards for over 150 participants and organizers in school Olympiad
+% \item Collected information and created database application
+% \item Created posters for publicity on social media and banners for stalls
+% \end{tightemize}
+% \sectionsep
+
+% \subsection{Drexel University}
+% \descript{Intramural Sports Official }
+% \location{Jan 2020 – Present | Philadelphia, PA}
+% \begin{tightemize}
+% \item Officiated 30+ basketball and soccer games
+% \item Notified players, coaches and officiating team of rule infractions and relevant penalties
+% \item Promoted good sportsmanship among players by communicating with heated players to ensure safety for everyone
+% \item Added and subtracted points from scores, tabulated penalties and keep accurate totals for each game
+% \item Monitored playtimes and elapsed time during particular events, stopping clocks to meet regulatory requirements
+% \end{tightemize}
+% \sectionsep
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Projects
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%       Drexel Course Availability Notifier
+\section{Projects}
+\runsubsection{Drexel Course Availability Notifier}
+\descript{| \href{https://github.com/Zohair-coder/Drexel-Course-Availability-Notifier}{GitHub}}
+\location{Fall 2020 | Philadelphia, PA}
+\begin{tightemize}
+\item Built a web-scraper in Python3 that notifies students via email when their selected course had available seats
+\item Impacted over 50+ students at Drexel University who used this program to help them sign up for their courses easily
+\item Used the requests and BeautifulSoup4 libraries to manipulate HTML data and extract useful information
+\item Surveyed potential users and changed functionality based on feedback
+\end{tightemize}
+\sectionsep
+
+%       Finance Web Application
+\runsubsection{Finance Web Application}
+\descript{| \href{https://github.com/Zohair-coder/CS50-Finance}{GitHub}}
+\location{Summer 2020 | Philadelphia, PA}
+\begin{tightemize}
+\item Built a stock trading simulator web-application in Python3 using Flask
+\item Programmed in more than 4 languages after learning them in 2 weeks
+\item Implemented a database in SQLite to store login credentials (hashed) and user data
+\item Integrated IEX API to capture real-time stocks' data
+\item Styled website with CSS library Bootstrap4
+\end{tightemize}
+\sectionsep
+
+%       Spell Checker
+\runsubsection{Spell Checker}
+\descript{| \href{https://github.com/Zohair-coder/CS50-speller}{GitHub}}
+\location{Summer 2020 | Philadelphia, PA}
+\begin{tightemize}
+\item Implemented a program in C that spell-checks a text file using a hash-table
+\item Loads 143,091 dictionary words in memory and can check 965 words in 0.38 seconds
+\end{tightemize}
+\sectionsep
+
+%       Filter
+\runsubsection{Image Filter}
+\descript{| \href{https://github.com/Zohair-coder/CS50-Filter}{GitHub}}
+\location{Summer 2020 | Philadelphia, PA}
+\begin{tightemize}
+\item Implemented a program in C that adds up to 4 Instagram esque filters to an image (gray-scale, sepia, reflection, blur)
+\item Manipulated bytes to change individual pixels of an image according to the type of filter
+\end{tightemize}
+\sectionsep
+
+
+
+
+%       FIFA Ultimate Team Price Checker
+% \runsubsection{Fifa Ultimate Team Price Checker}
+% \descript{| GitHub}
+% \location{Summers 2020 | Philadelphia, PA}
+% \begin{tightemize}
+% \item Built a web-scraper in Python3 that informs user of current player price in the video-game FIFA Ultimate Team
+% \end{tightemize}
+% \sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     AWARDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{Awards} 
+% \begin{tabular}{rll}
+% 2020         & AJ Drexel Merit Scholarship \\
+% 2020	     & Dean's List Spring 2020 and Fall, Winter 2019 \\
+% 2017         & Common Wealth Essay Competition Silver Award \\
+% \end{tabular}
+% \sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PUBLICATIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{Publications} 
+% \renewcommand\refname{\vskip -1.5em} % Couldn't get this working from the .cls file
+% \bibliographystyle{abbrv}
+% \bibliography{publications}
+% \nocite{*}
+
+\end{minipage} 
+\end{document}  \documentclass[]{article}
