@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1603830395 "deedy_resume-openfont.xdv" "deedy_resume-openfont.pdf" "deedy_resume-openfont" 1603830397
+["xdvipdfmx"] 1603830395 "deedy_resume-openfont.xdv" "deedy_resume-openfont.pdf" "deedy_resume-openfont" 1603830759
   "deedy_resume-openfont.xdv" 1603830395 40796 3a5014944eef36ca83b6dafcd6ee6f61 "xelatex"
   (generated)
   "deedy_resume-openfont.pdf"
-["xelatex"] 1603830393 "c:/Users/Zohai/OneDrive - Drexel University/Documents/Resume/2020 Fall/Source Code/deedy_resume-openfont.tex" "deedy_resume-openfont.xdv" "deedy_resume-openfont" 1603830397
+["xelatex"] 1603830393 "c:/Users/Zohai/OneDrive - Drexel University/Documents/Resume/2020 Fall/Source Code/deedy_resume-openfont.tex" "deedy_resume-openfont.xdv" "deedy_resume-openfont" 1603830759
   "c:/Users/Zohai/OneDrive - Drexel University/Documents/Resume/2020 Fall/Source Code/deedy_resume-openfont.tex" 1603830389 11289 e667a055167ab542f4b936802a54f52e ""
   "c:/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1603821610 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1603826672 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -74,6 +74,6 @@
   "deedy_resume-openfont.tex" 1603830389 11289 e667a055167ab542f4b936802a54f52e ""
   (generated)
   "deedy_resume-openfont.log"
-  "deedy_resume-openfont.xdv"
   "deedy_resume-openfont.out"
   "deedy_resume-openfont.aux"
+  "deedy_resume-openfont.xdv"
