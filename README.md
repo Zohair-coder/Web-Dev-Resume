@@ -1,1 +1,1 @@
-[Resume Link](deedy_resume_openfont.pdf)
+[Resume Link](deedy_resume-openfont.pdf)
