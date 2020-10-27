@@ -1,1 +1,1 @@
-[Resume Link](deedy_resume-openfont.pdf)
+[Resume Link](<Zohair's\ Resume.pdf>)
