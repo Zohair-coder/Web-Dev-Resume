@@ -1,1 +1,1 @@
-[Resume Link](<Zohair's\ Resume.pdf>)
+[Resume Link](<./Zohair's\ Resume.pdf>)
