@@ -20,14 +20,15 @@ jobs:
             exit 0
           fi
 
-      - name: Set up TeX environment
-        uses: actions/setup-tex@v1
-        with:
-          tex-live-version: latest
-
       - name: Compile TeX to PDF
-        run: |
-          xelatex "Zohair's Resume.tex"
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: |
+            "Zohair's Resume.tex"
+          compiler: xelatex
+          extra_fonts: |
+            ./fonts/**/*.otf
+            ./fonts/**/*.ttf
 
       - name: Add and commit PDF
         run: |
