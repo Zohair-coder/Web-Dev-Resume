@@ -6,69 +6,71 @@ on:
       - main
 
 jobs:
-  - create_pdf:
-  runs-on: ubuntu-latest
+  create_pdf:
+    name: Create PDF
+    runs-on: ubuntu-latest
 
-  steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Check if PDF file exists
-      run: |
-        if [ -f "Zohair's Resume.pdf" ]; then
-          echo "PDF file already exists, exiting workflow."
-          exit 0
-        fi
+      - name: Check if PDF file exists
+        run: |
+          if [ -f "Zohair's Resume.pdf" ]; then
+            echo "PDF file already exists, exiting workflow."
+            exit 0
+          fi
 
-    - name: Compile TeX to PDF
-      uses: xu-cheng/latex-action@v2
-      with:
-        root_file: |
-          Zohair's Resume.tex
-        compiler: xelatex
-        extra_fonts: |
-          ./fonts/raleway/*.otf
-          ./fonts/lato/*.ttf
+      - name: Compile TeX to PDF
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: |
+            Zohair's Resume.tex
+          compiler: xelatex
+          extra_fonts: |
+            ./fonts/raleway/*.otf
+            ./fonts/lato/*.ttf
 
-    - name: Add and commit PDF
-      run: |
-        git config --global user.email "zohair.ul.hasan@gmail.com"
-        git config --global user.name "GitHub Actions"
-        git add "Zohair's Resume.pdf"
-        git commit -m "Generate PDF from TeX"
-        git push origin main
-  - deploy:
-  runs-on: ubuntu-latest
+      - name: Add and commit PDF
+        run: |
+          git config --global user.email "zohair.ul.hasan@gmail.com"
+          git config --global user.name "GitHub Actions"
+          git add "Zohair's Resume.pdf"
+          git commit -m "Generate PDF from TeX"
+          git push origin main
+  deploy:
+    name: Trigger Netlify Hook
+    runs-on: ubuntu-latest
 
-  steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Check if PDF file exists
-      run: |
-        if [ ! -f "Zohair's Resume.pdf" ]; then
-          echo "::set-env name=SKIP_STEP::true"
-        fi
+      - name: Check if PDF file exists
+        run: |
+          if [ ! -f "Zohair's Resume.pdf" ]; then
+            echo "::set-env name=SKIP_STEP::true"
+          fi
 
-    - name: Compile TeX to PDF
-      if: ${{ env.SKIP_STEP }} == "true"
-      uses: xu-cheng/latex-action@v2
-      with:
-        root_file: |
-          Zohair's Resume.tex
-        compiler: xelatex
-        extra_fonts: |
-          ./fonts/raleway/*.otf
-          ./fonts/lato/*.ttf
+      - name: Compile TeX to PDF
+        if: ${{ env.SKIP_STEP }} == "true"
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: |
+            Zohair's Resume.tex
+          compiler: xelatex
+          extra_fonts: |
+            ./fonts/raleway/*.otf
+            ./fonts/lato/*.ttf
 
-    - name: Add and commit PDF
-      if: ${{ env.SKIP_STEP }} == "true"
-      run: |
-        git config --global user.email "zohair.ul.hasan@gmail.com"
-        git config --global user.name "GitHub Actions"
-        git add "Zohair's Resume.pdf"
-        git commit -m "Generate PDF from TeX"
-        git push origin main
+      - name: Add and commit PDF
+        if: ${{ env.SKIP_STEP }} == "true"
+        run: |
+          git config --global user.email "zohair.ul.hasan@gmail.com"
+          git config --global user.name "GitHub Actions"
+          git add "Zohair's Resume.pdf"
+          git commit -m "Generate PDF from TeX"
+          git push origin main
 
-    - name: Trigger Netlify Build
-      run: curl -X POST -d {} https://api.netlify.com/build_hooks/${{ secrets.NETLIFY_BUILD_HOOK_ID }}
+      - name: Trigger Netlify Build
+        run: curl -X POST -d {} https://api.netlify.com/build_hooks/${{ secrets.NETLIFY_BUILD_HOOK_ID }}
