@@ -39,6 +39,7 @@ jobs:
           git commit -m "Generate PDF from TeX"
           git push origin main
   deploy:
+    needs: create_pdf
     name: Trigger Netlify Hook
     runs-on: ubuntu-latest
 
