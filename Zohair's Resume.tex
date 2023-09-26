@@ -141,7 +141,7 @@
       {Susquehana International Group}{March 2023 -- Sep. 2023}
       {Software Engineering Coop - Corporate Systems}{Philadelphia, PA}
       \resumeItemListStart
-        \resumeItem{}
+        \resumeItem {}
       \resumeItemListEnd
       
       
@@ -149,22 +149,37 @@
     {SAP America}{March 2021 -- March 2023}
     {Software Engineering Coop - Artificial Intelligence}{Philadelphia, PA}
     \resumeItemListStart
-    \resumeItem{}
+      \resumeItem {Contributed to an open-source ML platform (ML Lab \textbf{\href{https://github.com/SAP/machine-learning-lab}{github.com/SAP/machine-learning-lab}}) that acts as a centralized hub for development teams to seamlessly build, deploy, \& operate ML solutions at scale}
+      \resumeItem {Integrated an open-source solution, ML Flow, into ML Lab for tracking parameters, metrics \& artifacts for each run using Python, FastAPI \& React}
+      \resumeItem {Created custom plugin in Python for ML Flow to seamlessly work with ML Lab's JSON and file storage}
+      \resumeItem {Wrote tests for plugin using pytest to ensure quality/reliability}
+      \resumeItem {Developed a Job Scheduler component that ran user specified jobs on a repeated schedule by parsing a cron string}
+      \resumeItem {Implemented Readers-writer lock to avoid race conditions}
+      \resumeItem {Debugged and fixed small issues with ML Lab using React and Python to improve user experience}
     \resumeItemListEnd
     
-    % -----------Multiple Positions Heading-----------
-        \resumeSubSubheading
-        {Software Engineering Coop - Production Management Portals}{}
-        \resumeItemListStart
-            \resumeItem{}
-        \resumeItemListEnd
-    %-------------------------------------------
+    \resumeSubSubheading
+    {Software Engineering Coop - Production Management Portals}{}
+    \resumeItemListStart
+      \resumeItem {Developed and deployed a webapp, and an accompanying Terraform Provider written in Go to report virtual machines in use to SAP's internal auditing system}
+      \resumeItem {Built a front end in vanilla JavaScript and a backend in Node.js}
+      \resumeItem {Deployed apps using Docker and Kubernetes to improve reliabliability and scalability of the webapp}
+      \resumeItem {Created Jenkins pipelines to automate the testing and deployment of the webapp and Terraform Provider by automatically pushing newly built webapp images }to a registry and uploading the Terraform Provider executable to an Openstack objectstore
+      % \resumeItem {Implemented authentication using OIDC protocol to authenticate with Keycloak}
+      \resumeItem {Created a private Terraform registry to allow for easy Provider installation}
+      \resumeItem {Wrote tests for the webapp and Terraform Provider using MochaJS, Selenium (Python) and Go to ensure quality/reliability}
+      % \resumeItem {Created visualizations in Kibana using the Elasticsearch stack to analyze Dynatrace billing data }
+      \resumeItem {Developed Ruby script to process billing data from Dynatrace and upload to Kibana for visualization and analyzation, reducing bill cost by 30\%}
+      \resumeItem {Wrote Terraform modules to improve productivity for employees}
+    \resumeItemListEnd
     
     \resumeSubheading
     {Drexel College of Computing and Informatics}{April 2021 -- Current}
     {Teacher Assistant}{Philadelphia, PA}
     \resumeItemListStart
-      \resumeItem{}
+      \resumeItem {Created and sold a program designed to improve grading efficiency by a factor of 20 for \$500}
+      \resumeItem {Helped students understand complex concepts in Computer Science and cleared confusions by attending regular office hours}
+      \resumeItem {Graded student homework}
     \resumeItemListEnd
   
     \resumeSubHeadingListEnd
