@@ -28,10 +28,6 @@ jobs:
         with:
           root_file: |
             Zohair's Resume.tex
-          compiler: xelatex
-          extra_fonts: |
-            ./fonts/raleway/*.otf
-            ./fonts/lato/*.ttf
 
       - name: Add and commit PDF
         if: steps.pdfExistsStep.conclusion == 'failiure'
