@@ -191,7 +191,10 @@
       \resumeProjectHeading
           {\textbf{Drexel Scheduler} $|$ \href{https://scheduler.zohair.dev}{scheduler.zohair.dev} $|$ \href{https://github.com/Zohair-coder/drexel-scraper}{GitHub}}{Feb 2023 -- Present}
           \resumeItemListStart
-            \resumeItem{}
+            \resumeItem {Developed a job in Python that scrapes Drexel's course catalog and professor ratings from RateMyProfessors and stores the data in a PostgreSQL database}
+            \resumeItem {Created a dashboard in Grafana that visualizes the data to allow students to find the elective they're looking for by filtering and sorting the instructor ratings and other course data}
+            \resumeItem {Hosted the Grafana instance and scraper job on a Kubernetes cluster using DigitalOcean's managed Kubernetes service}
+            \resumeItem {Automated the deployment of the job and Grafana instance using GitHub Actions}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 
