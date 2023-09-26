@@ -18,6 +18,8 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage[latin1]{inputenc}   
+\usepackage[T1]{fontenc} 
 \input{glyphtounicode}
 
 
@@ -101,8 +103,7 @@
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
+   
 \begin{document}
 
 %----------HEADING----------
@@ -112,10 +113,14 @@
 % \end{tabular*}
 
 \begin{center}
-    \textbf{\Huge \scshape Zohair ul Hasan} \\ \vspace{1pt}
-    \small 215-316-4989 $|$ \href{mailto:zohair.ul.hasan@gmail.com}{zohair.ul.hasan@gmail.com} $|$ 
-    \href{https://linkedin.com/in/zohair01}{linkedin.com/in/zohair01} $|$
-    \href{https://github.com/Zohair-coder}{github.com/Zohair-coder}
+    \textbf{\Huge \scshape Zohair ul Hasan} \\ \vspace{3pt}
+    \small \href{https://zohair.dev}{zohair.dev} \\ \vspace{1pt}
+    \small
+      \href{https://github.com/Zohair-coder}{github.com/Zohair-coder}
+      $|$
+      \href{mailto:zohair.ul.hasan@gmail.com}{zohair.ul.hasan@gmail.com}
+      $|$ 
+      \href{https://linkedin.com/in/zohair01}{linkedin.com/in/zohair01}
 \end{center}
 
 
@@ -134,45 +139,35 @@
 
     \resumeSubheading
       {Susquehana International Group}{March 2023 -- Sep. 2023}
-      {Software Engineer - Coop}{Philadelphia, PA}
+      {Software Engineering Coop - Corporate Systems}{Philadelphia, PA}
       \resumeItemListStart
-        \resumeItem{Developed a REST API using FastAPI and PostgreSQL to store data from learning management systems}
-        \resumeItem{Developed a full-stack web application using Flask, React, PostgreSQL and Docker to analyze GitHub data}
-        \resumeItem{Explored ways to visualize GitHub collaboration in a classroom setting}
+        \resumeItem{}
       \resumeItemListEnd
       
-% -----------Multiple Positions Heading-----------
-%    \resumeSubSubheading
-%     {Software Engineer I}{Oct 2014 - Sep 2016}
-%     \resumeItemListStart
-%        \resumeItem{Apache Beam}
-%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%     \resumeItemListEnd
-%    \resumeSubHeadingListEnd
-%-------------------------------------------
-
+      
     \resumeSubheading
-      {SAP America}{March 2022 -- March 2023}
-      {Software Engineer - Coop}{Philadelphia, PA}
-      \resumeItemListStart
-        \resumeItem{Communicate with managers to set up campus computers used on campus}
-        \resumeItem{Assess and troubleshoot computer problems brought by students, faculty and staff}
-        \resumeItem{Maintain upkeep of computers, classroom equipment, and 200 printers across campus}
+    {SAP America}{March 2021 -- March 2023}
+    {Software Engineering Coop - Artificial Intelligence}{Philadelphia, PA}
+    \resumeItemListStart
+    \resumeItem{}
     \resumeItemListEnd
-
+    
+    % -----------Multiple Positions Heading-----------
+        \resumeSubSubheading
+        {Software Engineering Coop - Production Management Portals}{Philadelphia, PA}
+        \resumeItemListStart
+            \resumeItem{}
+        \resumeItemListEnd
+    %-------------------------------------------
+    
     \resumeSubheading
-      {SAP America}{March 2021 -- March 2022}
-      {Software Engineer - Coop}{Philadelphia, PA}
-      \resumeItemListStart
-        \resumeItem{Explored methods to generate video game dungeons based off of \emph{The Legend of Zelda}}
-        \resumeItem{Developed a game in Java to test the generated dungeons}
-        \resumeItem{Contributed 50K+ lines of code to an established codebase via Git}
-        \resumeItem{Conducted  a human subject study to determine which video game dungeon generation technique is enjoyable}
-        \resumeItem{Wrote an 8-page paper and gave multiple presentations on-campus}
-        \resumeItem{Presented virtually to the World Conference on Computational Intelligence}
-      \resumeItemListEnd
-
-  \resumeSubHeadingListEnd
+    {Drexel College of Computing and Informatics}{April 2021 -- Current}
+    {Teacher Assistant}{Philadelphia, PA}
+    \resumeItemListStart
+      \resumeItem{}
+    \resumeItemListEnd
+  
+    \resumeSubHeadingListEnd
 
 
 %-----------PROJECTS-----------
@@ -181,19 +176,8 @@
       \resumeProjectHeading
           {\textbf{Drexel Scheduler} $|$ \href{https://scheduler.zohair.dev}{scheduler.zohair.dev} $|$ \href{https://github.com/Zohair-coder/drexel-scraper}{GitHub}}{Feb 2023 -- Present}
           \resumeItemListStart
-            \resumeItem{Developed a full-stack web application using with Flask serving a REST API with React as the frontend}
-            \resumeItem{Implemented GitHub OAuth to get data from user’s repositories}
-            \resumeItem{Visualized GitHub data to show collaboration}
-            \resumeItem{Used Celery and Redis for asynchronous tasks}
+            \resumeItem{}
           \resumeItemListEnd
-      % \resumeProjectHeading
-      %     {\textbf{Simple Paintball} $|$ \emph{Spigot API, Java, Maven, TravisCI, Git}}{May 2018 -- May 2020}
-      %     \resumeItemListStart
-      %       \resumeItem{Developed a Minecraft server plugin to entertain kids during free time for a previous job}
-      %       \resumeItem{Published plugin to websites gaining 2K+ downloads and an average 4.5/5-star review}
-      %       \resumeItem{Implemented continuous delivery using TravisCI to build the plugin upon new a release}
-      %       \resumeItem{Collaborated with Minecraft server administrators to suggest features and get feedback about the plugin}
-      %     \resumeItemListEnd
     \resumeSubHeadingListEnd
 
 
@@ -203,10 +187,10 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Java, Python, C/C++, SQL (Postgres), JavaScript, HTML/CSS, R} \\
-     \textbf{Frameworks}{: React, Node.js, Flask, JUnit, WordPress, Material-UI, FastAPI} \\
-     \textbf{Developer Tools}{: Git, Docker, TravisCI, Google Cloud Platform, VS Code, Visual Studio, PyCharm, IntelliJ, Eclipse} \\
-     \textbf{Libraries}{: pandas, NumPy, Matplotlib}
+     \textbf{Languages}{: Python, C\#, JavaScript, SQL} \\
+     \textbf{Frameworks}{: .NET, React, Express.js, FastAPI} \\
+     \textbf{Developer Tools}{: Docker, Kubernetes, Terraform, GitLab CI/CD, Git} \\
+    %  \textbf{Libraries}{: pandas, NumPy, Matplotlib}
     }}
  \end{itemize}
 
