@@ -1,431 +1,221 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Deedy - One Page Two Column Resume
-% LaTeX Template
-% Version 1.2 (16/9/2014)
-%
-% Original author:
-% Debarghya Das (http://debarghyadas.com)
-%
-% Original repository:
-% https://github.com/deedydas/Deedy-Resume
-%
-% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
-%
-% This template uses several fonts not included with Windows/Linux by
-% default. If you get compilation errors saying a font is missing, find the line
-% on which the font is used and either change it to a font included with your
-% operating system or comment the line out to use the default font.
-% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 
-% TODO:
-% 1. Integrate biber/bibtex for article citation under publications.
-% 2. Figure out a smoother way for the document to flow onto the next page.
-% 3. Add styling information for a "Projects/Hacks" section.
-% 4. Add location/address information
-% 5. Merge OpenFont and MacFonts as a single sty with options.
-% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% CHANGELOG:
-% v1.1:
-% 1. Fixed several compilation bugs with \renewcommand
-% 2. Got Open-source fonts (Windows/Linux support)
-% 3. Added Last Updated
-% 4. Move Title styling into .sty
-% 5. Commented .sty file.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Known Issues:
-% 1. Overflows onto second page if any column's contents are more than the
-% vertical limit
-% 2. Hacky space on the first bullet point on the second column.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------
+% Resume in Latex
+% Author : Zohair ul Hasan
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
 
+\documentclass[letterpaper,11pt]{article}
 
-\documentclass[]{deedy-resume-openfont}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
- 
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[latin1]{inputenc}   
+\usepackage[T1]{fontenc} 
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
 \pagestyle{fancy}
-\fancyhf{}
- 
-\begin{document}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%     LAST UPDATED DATE
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \lastupdated
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%     TITLE NAME
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\namesection{Zohair}{ul Hasan}{
-    \href{https://www.zohair.dev/}{www.zohair.dev} \\
-    \href{https://github.com/Zohair-coder/}{github.com/Zohair-coder} | \href{mailto:zohair.ul.hasan@gmail.com}{zohair.ul.hasan@gmail.com} |
-    \href{https://www.linkedin.com/in/zohair01/}{linkedin.com/in/zohair01}
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Zohair ul Hasan} \\ \vspace{3pt}
+    \small \href{https://zohair.dev}{www.zohair.dev} \\ \vspace{1pt}
+    \small
+      \href{https://github.com/Zohair-coder}{github.com/Zohair-coder}
+      $|$
+      \href{mailto:zohair.ul.hasan@gmail.com}{zohair.ul.hasan@gmail.com}
+      $|$ 
+      \href{https://linkedin.com/in/zohair01}{linkedin.com/in/zohair01}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Drexel University}{Philadelphia, PA}
+      {Bachelor of Science in Computer Science - GPA 3.86}{Sep. 2019 -- June 2024}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Susquehana International Group}{March 2023 -- Sep. 2023}
+      {Software Engineering Coop - Corporate Systems}{Philadelphia, PA}
+      \resumeItemListStart
+        \resumeItem {Worked on multiple projects leveraging the .NET ecosystem, SQL Server databases, and Elastic APM for logging}
+        \resumeItem {Maintained .NET MVC applications for application inventory management and operational checks, improving information accessibility and application performance monitoring}
+        \resumeItem {Automated IIS log retrieval and database updates in C\#, facilitating data visualization on a Grafana dashboard for informed decision-making}
+        \resumeItem {Orchestrated automated testing workflows via a .NET 6 Minimal API app, integrating with GitLab CI/CD and deploying to Kubernetes, pioneering solutions for Windows Authentication challenges inside Linux containers}
+        \resumeItem {Created a web application for automated scheduled communications through Symphony chatbots, streamlining team updates on operational statuses}
+        \resumeItem {Conceptualized and developed a force-directed graph visualization tool using d3.js, facilitating the analysis of our teams application inventory data}
+
+        \resumeItemListEnd
+      
+      
+    \resumeSubheading
+    {SAP America}{March 2021 -- March 2023}
+    {Software Engineering Coop - Artificial Intelligence}{Philadelphia, PA}
+    \resumeItemListStart
+      \resumeItem {Contributed to an open-source ML platform (ML Lab \textbf{\href{https://github.com/SAP/machine-learning-lab}{github.com/SAP/machine-learning-lab}}) that acts as a centralized hub for development teams to seamlessly develop, build, deploy, \& operate ML solutions at scale}
+      \resumeItem {Seamlessly integrated an open-source solution, ML Flow, into ML Lab for tracking parameters, metrics \& artifacts for each run using Python, FastAPI \& React}
+      % \resumeItem {Created custom plugin in Python for ML Flow to seamlessly work with ML Lab's JSON and file storage}
+      % \resumeItem {Wrote tests for plugin using pytest to ensure quality/reliability}
+      \resumeItem {Developed a Job Scheduler component that ran user specified jobs on a repeated schedule by parsing a cron string}
+      % \resumeItem {Implemented Readers-writer lock to avoid race conditions}
+      % \resumeItem {Debugged and fixed small issues with ML Lab using React and Python to improve user experience}
+    \resumeItemListEnd
+    
+    \resumeSubSubheading
+    {Software Engineering Coop - Production Management Portals}{}
+    \resumeItemListStart
+      \resumeItem {Developed a webapp with a vanilla JavaScript front-end and Node.js backend, along with a Terraform Provider written in Go, to report virtual machine usage to SAP's internal auditing system}
+      \resumeItem {Enhanced app reliability and scalability by deploying it via Docker and Kubernetes}
+      \resumeItem {Automated CI/CD workflows using Jenkins pipelines for both the webapp and Terraform Provider}
+      % \resumeItem {Implemented authentication using OIDC protocol to authenticate with Keycloak}
+      \resumeItem {Created a private Terraform registry for simplified Provider installation and wrote Terraform modules to improve employee productivity}
+      % \resumeItem {Wrote tests for the webapp and Terraform Provider using MochaJS, Selenium (Python) and Go to ensure quality/reliability}
+      % \resumeItem {Created visualizations in Kibana using the Elasticsearch stack to analyze Dynatrace billing data }
+      % \resumeItem {Developed Ruby script to process billing data from Dynatrace and upload to Kibana for visualization and analyzation, reducing bill cost by 30\%}
+    \resumeItemListEnd
+    
+    \resumeSubheading
+    {Drexel College of Computing and Informatics}{April 2021 -- Current}
+    {Teacher Assistant}{Philadelphia, PA}
+    \resumeItemListStart
+      \resumeItem {Created and sold a program designed to improve grading efficiency by a factor of 20 for \$500}
+      \resumeItem {Conducted regular office hours to clarify complex Computer Science concepts for students and graded homework}
+      % \resumeItem {Graded student homework}
+    \resumeItemListEnd
+  
+    \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+        {\textbf{Drexel Scheduler} $|$ \href{https://scheduler.zohair.dev}{scheduler.zohair.dev} $|$ \href{https://github.com/Zohair-coder/drexel-scraper}{GitHub}}{Feb 2023 -- Present}
+          \resumeItemListStart
+            \resumeItem {Developed a Python web scraper to autonomously fetch Drexel's course catalog and professor ratings from RateMyProfessors; data stored in a PostgreSQL database}
+            \resumeItem {Created a Grafana dashboard with a user-friendly interface, allowing students to efficiently find electives by filtering and sorting instructor ratings and course data; achieving over 300 active users as measured by Google Analytics}
+            \resumeItem {Hosted the application on a Kubernetes cluster using DigitalOcean's managed service, ensuring high availability and scalability}
+            \resumeItem {Automated the CI/CD pipeline with GitHub Actions, reducing deployment time by 50\%}
+            \resumeItem {Implemented security best practices to protect sensitive data and ensure the integrity of the system}
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+
+
 %
-%     COLUMN ONE
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{minipage}[t]{0.33\textwidth}
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %     EDUCATION
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-    \section{Education}
-    %       Drexel University
-    \subsection{Drexel University}
-    \descript{B.S. in Computer Science}
-    \location{Expected Graduation June 2024 | Philadelphia, PA}
-    % Current year: Pre-Junior \\
-    \textbf{GPA: 3.85} \\
-    % \vspace{\topsep}
-    % Honors:
-    % \vspace{\topsep} % Hacky fix for awkward extra vertical space
-    % \begin{tightemize}
-    %     \item Drexel AJ Scholarship (\$42,000/yr)
-    %     \item Dean's List in all quarters
-    % \end{tightemize}
-    % Relevant Courses: \\
-    % \begin{tightemize}
-    %     \item Data Structures (A+)
-    %     \item Advanced Programming I \& II (A+, A+)
-    %     \item Advanced Programming Tools \& Techniques (A+)
-    % \end{tightemize}
-    \sectionsep
-
-    %       CS 50 Harvard Online Course
-    % \runsubsection{CS 50 Harvard Online Course}
-    % \descript{ | \href{https://certificates.cs50.io/801bb5e8-6b16-4993-94ac-85911ba54d47.pdf?size=letter}{Certificate}}
-    % \location{Summer 2020 |  Philadelphia, PA}
-    % Learned complex Computer Science topics including: \\
-    % % \vspace{\topsep} % Hacky fix for awkward extra vertical space
-    % \begin{tightemize}
-    %     \item Algorithms and Data Structures (C programming language)
-    %     \item Pointers
-    %     \item Memory management
-    %     \item Databases
-    %     \item HTML \& CSS
-    %     \item Python
-    %     \item Flask
-    % \end{tightemize}
-    % \sectionsep
-
-    %       Roots School System
-    % \subsection{Roots School System}
-    % \descript{Highschool}
-    % \location{Graduated August 2019 |  Islamabad, Pakistan}
-    % GPA: 3.95
-    % \sectionsep
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %     SKILLS
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-    \section{Technical Skills}
-    %       Technical Skills
-    \subsection{Programming Languages \& Libraries}
-    % \location{General:}
-    % \vspace{\topsep} % space added by myself; can be removed if needed
-    Python3, Node.js \& JavaScript/ES6, Express.js, React, FastAPI
-    \vspace{\topsep} % space added by myself; can be removed if needed
-    % \vspace{\topsep} % space added by myself; can be removed if needed
-    % \location{Libraries \& Frameworks:}
-    % \vspace{\topsep} % space added by myself; can be removed if needed
-    % React \textbullet{} Numpy \textbullet{} Matplotlib \textbullet{} Requests \\ BeautifulSoup4 \textbullet{} Bootstrap 4 \\
-    
-    \subsection{Other}
-    % \vspace{\topsep} % space added by myself; can be removed if needed
-    Docker, Kubernetes, Terraform,
-    Jenkins, PostgreSQL, MongoDB, Git
-    
-    % \sectionsep
-    
-    %       Languages
-    % \subsection{Languages}
-    % \vspace{\topsep}
-    % \begin{tightemize}
-        %     \item English
-        %     \item Urdu
-        %     \item Hindi
-        % \end{tightemize}
-        % \sectionsep
-        
-        %       Soft Skills
-        % \subsection{Soft Skills}
-        % Work Ethic \textbullet{} Time Management \\
-        % Adaptability \textbullet{}  Teamwork \textbullet{} Leadership \\
-        \vspace{\topsep}
-        \section {Projects}
-        
-        % MarketSim
-        \subsection{MarketSim}
-        \location{(January 2022 - March 2022)}
-        \textbf{\href{https://gitlab.com/Zohair-coder/market-sim}{gitlab.com/Zohair-coder/market-sim}} \\
-        \vspace{\topsep}
-        Led a team of 4 to create a stock market simulator to invest with virtual currency using React.js, Node.js, PostgreSQL and web sockets to get real time stock data
-        
-        \vspace{\topsep}
-        
-        % What's in your fridge
-        \subsection{What's in Your Fridge?}
-        \location{(September 2021 - March 2022)}
-        \textbf{\href{https://gitlab.cci.drexel.edu/ci102-3teaml/whats_in_your_fridge}{gitlab.cci.drexel.edu/ci102-3teaml/whats\_in\_your\_fridge}} \\
-        \vspace{\topsep}
-        Led a team of 5 to create a React webapp to help users find recipes based on ingredients they have in their fridge
-        
-        \vspace{\topsep}
-        
-        % Drexel Course Availability Notifier
-        \subsection{Drexel Course Notifier}
-        \location{(September 2020 - October 2020)}
-        \textbf{\href{https://github.com/Zohair-coder/Drexel-Course-Availability-Notifier}{github.com/Zohair-coder/Drexel-Course-Availability-Notifier}} \\
-        \vspace{\topsep}
-        Built a web-scraper in Python3 that notifies students via email when their selected course has available seats, impacting over 130 students at Drexel University
-        
-        \vspace{\topsep}
-        
-        \subsection{SAP Hackathon}
-        \location{(July 2022)}
-        \vspace{\topsep}
-        Participated in a Hackathon and worked primarily on the backend, using Node.js and MongoDB
-        
-        %       CS TA
-        % \location{Teacher Assistant \\
-        % (April 2021 - Current)}
-        % \vspace{\topsep}
-        % \vspace{\topsep}
-        % \begin{tightemize}
-        % \item Created and sold a program written in Python3 designed to improve grading efficiency by a factor of 20 for \$500
-        % \item Helped students understand complex concepts in Computer Science and cleared confusions by attending regular office hours
-        % \item Graded student homework
-        % \end{tightemize}
-        % \vspace{\topsep}
-        
-        % Drexel Vertically Integrated Projects
-        % \location{Drexel Vertically Integrated Projects \\
-        % (January 2021 - March 2021)}
-        % \vspace{\topsep}
-        % \begin{tightemize}
-        %     \item Lead a team of 2 to program a Raspberry Pi in Bash using FFMPEG (command line program used to process video and audio) for recording video, compressing it, and uploading live stream to YouTube
-        %     \item Learned Bash Scripting and FFMPEG in 1 week to complete the task
-        % \end{tightemize}
-        % \vspace{\topsep} % space added by myself; can be removed if needed
-        
-        % Head of IT
-        % \location{Head of IT at school event}
-        % \begin{tightemize}
-        %     \item Managed 5 person team to design, print and distribute ID cards for over 150 participants and organizers in school Olympiad
-        %     \item Collected information and created database
-        %     \item Created posters for publicity on social media and banners for stalls
-        % \end{tightemize}
-        
-        
-        % \vspace{\topsep} % space added by myself; can be removed if needed
-        
-        % %       Drexel University
-        % \location{Intramural Sports Official at Drexel University \\
-        % (January 2020 - March 2020)}
-        % \begin{tightemize}
-        %     \item Officiated 30+ basketball \& soccer games
-        %     \item Communicated with heated players to ensure safety for everyone
-        % \end{tightemize}
-        
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %
-    %     COLUMN TWO
-    %
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.66\textwidth}
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %     EXPERIENCE
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-    \section{Experience}
-    
-    % SAP America - Second Year
-    \subsection{SAP America}
-    \descript{Software Eng. Intern - Artificial Intelligence}
-    \location{April 2022 - Current | Philadelphia, PA}
-    \vspace{\topsep} % Hacky fix for awkward extra vertical space
-    \begin{tightemize}
-        \item Contributed to an open-source ML platform (ML Lab \textbf{\href{https://github.com/SAP/machine-learning-lab}{github.com/SAP/machine-learning-lab}}) that acts as a centralized hub for development teams to seamlessly build, deploy, \& operate ML solutions at scale
-        \item Integrated an open-source solution, ML Flow, into ML Lab for tracking parameters, metrics \& artifacts for each run using Python, FastAPI \& React
-        \item Created custom plugin in Python for ML Flow to seamlessly work with ML Lab's JSON and file storage
-        \item Wrote tests for plugin using pytest to ensure quality/reliability
-        \item Developed a Job Scheduler component that ran user specified jobs on a repeated schedule by parsing a cron string
-        \item Implemented Readers-writer lock to avoid race conditions
-        \item Debugged and fixed small issues with ML Lab using React and Python to improve user experience
-    \end{tightemize}
-    \sectionsep
-
-    %       SAP America - First Year
-    \subsection{SAP America}
-    \descript{Software Eng. Intern - Production Management Portals}
-    \location{April 2021 - March 2022 | Philadelphia, PA}
-    \begin{tightemize}
-        \item Developed and deployed a webapp, and an accompanying Terraform Provider written in Go to report virtual machines in use to SAP's internal auditing system
-        \item Built a front end in vanilla JavaScript and a backend in Node.js
-        \item Deployed apps using Docker and Kubernetes to improve reliabliability and scalability of the webapp
-        \item Created Jenkins pipelines to automate the testing and deployment of the webapp and Terraform Provider by automatically pushing newly built webapp images to a registry and uploading the Terraform Provider executable to an Openstack objectstore
-        % \item Implemented authentication using OIDC protocol to authenticate with Keycloak
-        \item Created a private Terraform registry to allow for easy Provider installation
-        \item Wrote tests for the webapp and Terraform Provider using MochaJS, Selenium (Python) and Go to ensure quality/reliability
-        % \item Created visualizations in Kibana using the Elasticsearch stack to analyze Dynatrace billing data 
-        \item Developed Ruby script to process billing data from Dynatrace and upload to Kibana for visualization and analyzation, reducing bill cost by 30\%
-        \item Wrote Terraform modules to improve productivity for employees \\
-    \end{tightemize}
-    \sectionsep
-    
-    
-    % %       CS TA
-    \subsection{Drexel College of Computing and Informatics}
-    \descript{Teacher Assistant}
-    \location{April 2021 - Current | Philadelphia, PA}
-    \begin{tightemize}
-        \item Created and sold a program designed to improve grading efficiency by a factor of 20 for \$500
-        \item Helped students understand complex concepts in Computer Science and cleared confusions by attending regular office hours
-        \item Graded student homework
-    \end{tightemize}
-    \sectionsep
-
-        %   Drexel Vertically Integrated Projects
-    \subsection{Drexel Vertically Integrated Projects}
-    \descript{Software Engineer}
-    \location{April 2020 - June 2020 | Philadelphia, PA}
-    \begin{tightemize}
-        \item Led a team of 2 to program a Raspberry Pi in Bash using FFMPEG (CLI program used to process video and audio) for recording video, compressing it, and uploading live stream to YouTube
-        % \item Learned Bash Scripting and FFMPEG in 1 week to complete the task
-        % \item Reduced latency by 40\% by optimizing key factors such as frames per second and video resolution
-        % \item Evaluated multiple options to complete the task and gave a presentation to \textbf{\href{https://drexel.edu/engineering/about/faculty-staff/C/cairncross-richard/}{Professor Cairncross}}
-    \end{tightemize}
-    \sectionsep
-
-    %       Roots School System
-    % \subsection{Roots School System}
-    % \descript{Head of IT}
-    % \location{Sep 2017 – Dec 2018 | Islamabad, Pakistan}
-    % \vspace{\topsep} % Hacky fix for awkward extra vertical space
-    % \begin{tightemize}
-    % \item Managed 5 person team to design, print and distribute ID cards for over 150 participants and organizers in school Olympiad
-    % \item Collected information and created database application
-    % \item Created posters for publicity on social media and banners for stalls
-    % \end{tightemize}
-    % \sectionsep
-
-    % \subsection{Drexel University}
-    % \descript{Intramural Sports Official }
-    % \location{January 2020 – March 2020 | Philadelphia, PA}
-    % \begin{tightemize}
-    % \item Officiated 30+ basketball and soccer games
-    % \item Notified players, coaches and officiating team of rule infractions and relevant penalties
-    % \item Promoted good sportsmanship among players by communicating with heated players to ensure safety for everyone
-    % \item Added and subtracted points from scores, tabulated penalties and keep accurate totals for each game
-    % \item Monitored playtimes and elapsed time during particular events, stopping clocks to meet regulatory requirements
-    % \end{tightemize}
-    % \sectionsep
-
-    %       MarketSIM?
-    % \runsubsection{MarketSIM}
-    % \descript{| \href{https://gitlab.com/Zohair-coder/market-sim}{GitLab Link}}
-    % \location{Winter 2021-22 | Philadelphia, PA}
-    % \begin{tightemize}
-    %     \item Led a team of 5 to create a stock market simulator for new investors to invest with virtual currency
-    %     \item Wrote front-end in React.js, back-end in Node.js and used PostgreSQL database to store user data
-    %     \item Used web sockets to get real time stock data from Alpaca API
-    % \end{tightemize}
-
-    %       What's in Your Fridge?
-    % \runsubsection{What's in Your Fridge?}
-    % \descript{| \href{https://gitlab.cci.drexel.edu/ci102-3teaml/whats_in_your_fridge/-/tree/main}{GitLab Link}}
-    % \location{Fall 2021-22 | Philadelphia, PA}
-    % \begin{tightemize}
-    %     \item Led a team of 5 to create a React webapp to help users find recipes based on ingredients they have in their fridge
-    %     % \item Utilized Google's MUI library to create a clean and intuitive user interface
-    % \end{tightemize}
-    %       Drexel Course Availability Notifier
-    % \runsubsection{Drexel Course Availability Notifier}
-    % \descript{| \href{https://github.com/Zohair-coder/Drexel-Course-Availability-Notifier}{GitHub Link}}
-    % \location{Fall 2020-21 | Philadelphia, PA}
-    % \begin{tightemize}
-    %     \item Built a web-scraper in Python3 that notifies students via email when their selected course has available seats
-    %     \item Impacted over 132 students at Drexel University who used this program to help them sign up for their courses easily
-    %     % \item Utilized the requests and BeautifulSoup4 libraries to manipulate HTML data and extract useful information
-    %     % \item Surveyed potential users and changed functionality based on feedback
-    % \end{tightemize}
-    % \sectionsep
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, C\#, JavaScript, SQL} \\
+     \textbf{Tools \& Frameworks}{: .NET, Express.js, FastAPI, React, Docker, Kubernetes, Helm, Terraform, GitLab CI/CD, Git} \\
+    }}
+ \end{itemize}
 
 
-    % %       Tic Tac Toe AI
-    % \runsubsection{Tic Tac Toe AI}
-    % \descript{| \href{https://github.com/Zohair-coder/Tic-Tac-Toe-AI}{GitHub}}
-    % \location{Summer 2020 | Philadelphia, PA}
-    % \begin{tightemize}
-    %     \item Programmed a Tic Tac Toe game with a GUI and an AI to play against in Python3
-    %     \item Implemented a Minimax algorithm to program a competitive AI opponent
-    % \end{tightemize}
-    % \sectionsep
-
-    % %       Spell Checker
-    % \runsubsection{Spell Checker}
-    % \descript{| \href{https://github.com/Zohair-coder/CS50-speller}{GitHub}}
-    % \location{Summer 2020 | Philadelphia, PA}
-    % \begin{tightemize}
-    %     \item Implemented a program in C that spell-checks a text file using a hash-table
-    %     \item Loads 143,091 dictionary words and checks 965 words in 0.38 seconds
-    % \end{tightemize}
-    % \sectionsep
-
-    % %       Filter
-    % \runsubsection{Image Filter}
-    % \descript{| \href{https://github.com/Zohair-coder/CS50-Filter}{GitHub}}
-    % \location{Summer 2020 | Philadelphia, PA}
-    % \begin{tightemize}
-    %     \item Implemented a program in C that adds up to 4 Instagram esque filters to an image (gray-scale, sepia, reflection, blur)
-    %     \item Manipulated bytes to modify pixels of an image according to the type of filter
-    % \end{tightemize}
-    % \sectionsep
-
-
-
-
-
-    %       FIFA Ultimate Team Price Checker
-    % \runsubsection{Fifa Ultimate Team Price Checker}
-    % \descript{| GitHub}
-    % \location{Summers 2020 | Philadelphia, PA}
-    % \begin{tightemize}
-    % \item Built a web-scraper in Python3 that informs user of current player price in the video-game FIFA Ultimate Team
-    % \end{tightemize}
-    % \sectionsep
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %     AWARDS
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-    % \section{Awards} 
-    % \begin{tabular}{rll}
-    % 2020         & AJ Drexel Merit Scholarship \\
-    % 2020	     & Dean's List Spring 2020 and Fall, Winter 2019 \\
-    % 2017         & Common Wealth Essay Competition Silver Award \\
-    % \end{tabular}
-    % \sectionsep
-
-\end{minipage}
-\end{document}  \documentclass[]{article}
+%-------------------------------------------
+\end{document}
