@@ -17,7 +17,7 @@ jobs:
       - name: Check if PDF file exists
         id: pdfExistsStep
         run: |
-          if [ ! -f "Zohair's Resume.pdf" ]; then
+          if [ ! -f "Hasan, Zohair Resume.pdf" ]; then
             echo "PDF file does not exist."
             exit 1
           fi
@@ -27,14 +27,14 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: |
-            Zohair's Resume.tex
+            Hasan, Zohair Resume.tex
 
       - name: Add and commit PDF
         if: steps.pdfExistsStep.conclusion == 'failiure'
         run: |
           git config --global user.email "zohair.ul.hasan@gmail.com"
           git config --global user.name "GitHub Actions"
-          git add "Zohair's Resume.pdf"
+          git add "Hasan, Zohair Resume.pdf"
           git commit -m "Generate PDF from TeX"
           git push origin main
   deploy:
